@@ -29,6 +29,7 @@ export function AddTransaction(props){
                         type="text" 
                         id="text-input" 
                         name="text"
+                        required
                         placeholder="Enter text..."
                         value={props.singleTransactionHistory.text} 
                         onChange={handleInputChange}
@@ -43,6 +44,7 @@ export function AddTransaction(props){
                         id="amount"
                         name="amount" 
                         placeholder="Enter amount..."
+                        required
                         value={props.singleTransactionHistory.amount} 
                         onChange={handleInputChange}
                     />
