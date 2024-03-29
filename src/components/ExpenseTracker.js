@@ -8,8 +8,7 @@ import { CurrentBalance } from "./CurrentBalance";
 export function ExpenseTracker(){
     const [singleTransactionHistory, setSingleTransactionHistory] = useState({
         text: '',
-        amount: '',
-        isHover: false
+        amount: ''
     })
     const [totalTransactionHistory, setTotalTransactionHistory] = useState([])
     return (
