@@ -8,11 +8,13 @@ import { CurrentBalance } from "./CurrentBalance";
 export function ExpenseTracker(){
     const [singleTransactionHistory, setSingleTransactionHistory] = useState({
         text: '',
-        amount: ''
+        amount: '',
+        isHover: false
     })
     const [totalTransactionHistory, setTotalTransactionHistory] = useState([])
     return (
-        <>
+        <div className="parent-container">
+            <h1 className="title">Expense Tracker</h1>
             <CurrentBalance
                 totalTransactionHistory={totalTransactionHistory}
             />
@@ -29,6 +31,6 @@ export function ExpenseTracker(){
                 totalTransactionHistory={totalTransactionHistory}
                 setTotalTransactionHistory={setTotalTransactionHistory}
             />
-        </>
+        </div>
     )
 }

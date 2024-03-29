@@ -13,11 +13,15 @@ export function IncomeExpense(props){
     })
     return(
         <>
-            <div>
-                <span><h4>Income</h4></span>
-                <div>Rs.{income}</div>
-                <span><h4>Expense</h4></span>
-                <div>Rs.{expense.toString().length > 1 ? expense.toString().substring(1) : expense}</div>
+            <div  className="row income-expense mt-3">
+                <span className="row">
+                    <h4 className="col income">Income</h4>
+                    <h4 className="col">Expense</h4>
+                </span>
+                <span className="row">
+                    <span className="col income-amount">Rs.{income}</span>
+                    <span className="col expense-amount">Rs.{expense.toString().length > 1 ? expense.toString().substring(1) : expense}</span>
+                </span>
             </div>
         </>
     )
