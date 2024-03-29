@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router  basename="/expense-tracker">
+    <Router>
       <Routes>
         <Route exact path='/' element={<ExpenseTracker/>}/>
       </Routes>
