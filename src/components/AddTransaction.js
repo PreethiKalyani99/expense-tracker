@@ -1,21 +1,24 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 export function AddTransaction(props){
+    const dispatch = useDispatch()
+
     function handleInputChange(e){
         const {name, value} = e.target
-        props.setSingleTransactionHistory({
+        dispatch(props.setSingleTransactionHistory({
             ...props.singleTransactionHistory,
             [name]: value
-        })
+        }))
     }
 
     function handleTransactionHistory(e){
         e.preventDefault()
-        props.setTotalTransactionHistory([...props.totalTransactionHistory, props.singleTransactionHistory])
-        props.setSingleTransactionHistory({
+        dispatch(props.addTransaction(props.singleTransactionHistory))
+        dispatch(props.setSingleTransactionHistory({
             text: '',
             amount: ''
-        })
+        }))
     }
     return (
         <div className="mt-5">
@@ -49,7 +52,7 @@ export function AddTransaction(props){
                         onChange={handleInputChange}
                     />
                 </div>
-                <button type="submit" className="add-btn btn btn-primary">Add Transaction</button>
+                <button type="submit" className="add-btn btn btn-primary" data-testid="add-transaction-btn">Add Transaction</button>
             </form> 
         </div>
     )
