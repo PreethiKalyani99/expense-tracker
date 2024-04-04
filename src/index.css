@@ -9,7 +9,6 @@
 
 .balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .add-btn{
   display: flex;
-  margin-left: 40%;
 }
 
 .balance-text{
@@ -24,10 +23,9 @@
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .income-expense{
   padding: 10px;
-  width: 20%;
-  margin-left: 40% !important;
   font-size: 20px;
 }
 
@@ -46,21 +44,11 @@
   font-weight: bold
 }
 
-.line{
-  width: 20%;
-  margin-left: 40%;
-}
-
 .delete-position, .delete-position-left{
   display: flex;
 }
 
-.delete-position{
-  margin-left: 38%;
-}
-
 .transaction-container{
-  width: 33%;
   display: flex;
   padding: 10px;
   justify-content: space-between;
@@ -80,6 +68,7 @@
   height: 5%;
   display: flex;
   align-self: center;
+  margin-left: 5%;
 }
 
 .hidden {
@@ -91,7 +80,6 @@
 }
 
 .input-text, .input-amount, .add-btn{
-  width: 20%;
   padding: 5px;
 }
 
@@ -99,4 +87,31 @@
   display: flex;
   justify-content: center;
   margin-left: 0%;
+}
+
+.balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .income-expense, .line{
+  margin-left: 10% !important;
+}
+
+.income-expense, .line, .input-text, .input-amount, .add-btn, .transaction-container{
+  width: 80%;
+}
+
+
+@media (min-width: 1280px) {
+  .balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .line, .income-expense{
+    margin-left: 40% !important;
+  }
+
+  .income-expense, .line, .input-text, .input-amount, .add-btn{
+    width: 20% !important;
+  }
+ 
+  .delete-button{
+    margin-left: 39% !important;
+  }
+  
+  .transaction-container{
+    width: 20% !important;
+  }
 }
