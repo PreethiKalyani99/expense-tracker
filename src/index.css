@@ -90,28 +90,33 @@
 }
 
 .balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .income-expense, .line{
-  margin-left: 10% !important;
+  margin-left: 40% !important;
 }
 
 .income-expense, .line, .input-text, .input-amount, .add-btn, .transaction-container{
-  width: 80%;
+  width: 20%;
 }
 
 
-@media (min-width: 1280px) {
-  .balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .line, .income-expense{
-    margin-left: 40% !important;
-  }
+.delete-button{
+  margin-left: 39%;
+}
 
-  .income-expense, .line, .input-text, .input-amount, .add-btn{
-    width: 20% !important;
-  }
- 
-  .delete-button{
-    margin-left: 39% !important;
+.transaction-container{
+  width: 20%;
+}
+
+
+@media (max-width: 750px) {
+  .balance-text, .balance-amount, .history-text, .add, .label-text, .input-text, .label-amount, .input-amount, .info, .income-expense, .line{
+    margin-left: 10% !important;
   }
   
-  .transaction-container{
-    width: 20% !important;
+  .income-expense, .line, .input-text, .input-amount, .add-btn, .transaction-container{
+    width: 80%;
+  }
+
+  .delete-button{
+    margin-left: 5%;
   }
 }
