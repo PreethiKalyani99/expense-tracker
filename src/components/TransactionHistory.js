@@ -1,14 +1,7 @@
 import React from "react";
 import { SingleTrasactionHistory } from "./SingleTransactionHistory";
-import { useDispatch } from "react-redux";
  
 export function TransactionHistory(props){
-    const dispatch = useDispatch()
-
-    function deleteTransaction(index){
-        const updatedHistory = props.totalTransactionHistory.filter((data, dataIndex) => index !== dataIndex)
-        dispatch(props.setTotalTransactionHistory(updatedHistory))
-    }
 
     return (
         <>
@@ -18,7 +11,7 @@ export function TransactionHistory(props){
                 props.totalTransactionHistory.map((transaction, index) => {
                     return <SingleTrasactionHistory
                         key={index}
-                        deleteTransaction={() => deleteTransaction(index)}
+                        id={index}
                         amount={transaction.amount}
                         text={transaction.text}
                     />
