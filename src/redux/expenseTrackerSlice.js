@@ -3,20 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 export const expenseTrackerSlice = createSlice({
     name: 'expenseTracker',
     initialState:{
-        totalTransactionHistory: []
+        totalTransactionHistory: JSON.parse(localStorage.getItem('transaction')) || []
     },
     reducers: {
         addTransaction: (state, action) => {
-            return {
-                ...state,
-                totalTransactionHistory: [...state.totalTransactionHistory, action.payload]
-              }
+            state.totalTransactionHistory.push(action.payload)
+            localStorage.setItem('transaction', JSON.stringify(state.totalTransactionHistory))
         },
         deleteTransaction: (state, action) => {
-            return {
-                ...state,
-                totalTransactionHistory: state.totalTransactionHistory.filter((transaction, index) => index !== action.payload)
-            }
+            state.totalTransactionHistory = state.totalTransactionHistory.filter((transaction, index) => index !== action.payload)
+            localStorage.setItem('transaction', JSON.stringify(state.totalTransactionHistory))
         }
     }
 })
